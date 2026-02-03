@@ -6,6 +6,9 @@ const notesRoute = require('./routes/notes')
 const app = express();
 const port = 3000;
 
+// Middleware
+app.use(express.json());
+
 // Connect MongoDB
 connectMongoDB(process.env.MONGOURL).then(() => console.log("Mongo Connected")).catch((err) => console.error(err))
 
